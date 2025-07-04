@@ -1,1 +1,135 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Mako", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --red-light-color: #ff7f7f; /* Light Red */
+  --red-color: #ff6347; /* Red */
+  --red-dark-color: #c62828; /* Dark Red */
+  --green-light-color: #90ee90; /* Light Green */
+  --green-color: #4caf50; /* Green */
+  --green-dark-color: #388e3c; /* Dark Green */
+  --gray-light-color: #eee; /* Light Gray */
+  --gray-dark-color: #333; /* Dark Gray */
+}
+
+app-root {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gray-light-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Wellfleet", serif;
+  font-weight: 400;
+  color: #333;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+/* Welcome */
+.title {
+  margin-bottom: 2rem;
+}
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.welcome .slogan {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.welcome .description {
+  display: inline-block;
+  width: 70%;
+  text-align: center;
+}
+
+.welcome .play {
+  margin-top: 2rem;
+  padding: 1rem 5rem;
+  border: none;
+  border-radius: 1.5rem;
+  background-color: var(--green-color);
+  transition: all 100ms;
+  font-size: 1.2rem;
+}
+
+.welcome .play:hover {
+  background-color: var(--green-dark-color);
+  cursor: pointer;
+}
+
+/* Game */
+.game {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background: linear-gradient(
+    to bottom right,
+    var(--red-light-color) 0%,
+    var(--red-color) 50%,
+    var(--red-dark-color) 100%
+  );
+  background-size: 400% 400%;
+  animation: waveBackground 5s ease infinite;
+  color: var(--gray-dark-color);
+}
+
+@keyframes waveBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.game h2 {
+  color: var(--gray-dark-color);
+}
+.game.click {
+  background-color: var(--green-light-color);
+  background-image: linear-gradient(
+    to bottom right,
+    var(--green-light-color) 0%,
+    var(--green-color) 50%,
+    var(--green-dark-color) 100%
+  );
+  animation: waveBackground 5s ease infinite;
+}
